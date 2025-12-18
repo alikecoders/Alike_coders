@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Explorer – Login First</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Login Section (shown first) -->
+<section id="login" class="center-section">
+  <div class="center-card">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username">
+    <button onclick="login()">Login</button>
+    <h3>Saved Trips</h3>
+    <ul id="saved"></ul>
+  </div>
+</section>
+
+<!-- Main Content (hidden until login) -->
+<div id="mainContent" class="hidden">
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h1>Travel Explorer</h1>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#destinations">Destinations</a></li>
+      <li><a href="#experiences">Experiences</a></li>
+      <li><a href="#plan">Plan Trip</a></li>
+      <li><a href="#booking">Booking</a></li>
+    </ul>
+  </nav>
+
+  <!-- Welcome message -->
+  <div id="welcomeUser" style="text-align:center; margin:20px; font-weight:bold;"></div>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <h2>Plan Trips & Discover Local Experiences</h2>
+    <input type="text" id="search" placeholder="Search destinations..." />
+    <button onclick="filterDestinations()">Search</button>
+  </section>
+
+  <!-- Destinations -->
+  <section id="destinations">
+    <h3>Popular Destinations</h3>
+    <div class="grid" id="destinationGrid"></div>
+  </section>
+
+  <!-- Detail View -->
+  <section id="detail" class="hidden">
+    <button onclick="goBack()">← Back</button>
+    <h2 id="detail-name"></h2>
+    <p id="detail-desc"></p>
+    <h3>Itinerary</h3>
+    <ul id="itinerary"></ul>
+    <h3>Map</h3>
+    <iframe id="map" loading="lazy" allowfullscreen></iframe>
+    <button onclick="saveTrip()">Save Trip</button>
+  </section>
+
+  <!-- Experiences -->
+  <section id="experiences" class="experiences">
+    <h3 class="center-text">Local Experiences</h3>
+    <div class="grid">
+      <div class="card experience-card">
+        <h4>Street Food Tours</h4>
+        <p>Explore authentic flavors with local guides.</p>
+      </div>
+      <div class="card experience-card">
+        <h4>Cultural Walks</h4>
+        <p>Discover history, art, and hidden gems.</p>
+      </div>
+      <div class="card experience-card">
+        <h4>Adventure Trips</h4>
+        <p>Thrilling experiences for adrenaline lovers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Plan Section -->
+  <section id="plan" class="center-text">
+    <h3>Start Planning Today</h3>
+    <p class="subtext">Build itineraries, save favorites, and travel with confidence.</p>
+    <button class="primary-btn" type="button">Create Your Trip</button>
+  </section>
+
+  <!-- Booking -->
+  <section id="booking" class="center-section">
+    <div class="center-card">
+      <h2>Book Your Trip</h2>
+      <form>
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="date" required>
+        <button type="submit">Book Now</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Travel Explorer. All rights reserved.
+  </footer>
+</div>
+
+<!-- Explore Modal -->
+<div id="exploreModal">
+  <div id="modalContent">
+    <span class="close-cross" onclick="closeModal()">&times;</span>
+    <div id="modalDetails"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
